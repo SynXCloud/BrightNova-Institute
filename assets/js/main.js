@@ -247,14 +247,14 @@
             tbody.innerHTML = '';
             data.forEach((row, idx) => {
                 const tr = document.createElement('tr');
-                tr.style.animationDelay = `\${idx * 0.1}s`;
+                tr.style.animationDelay = `${idx * 0.1}s`;
                 tr.innerHTML = `
-                    <td class="rank-col">#\${idx + 4}</td>
-                    <td><strong>\${row.name}</strong><br><small style="color:var(--text-muted)">\${row.stream}</small></td>
-                    <td>\${row.exam}</td>
-                    <td class="score-col">\${row.score}</td>
-                    <td class="badge-col"><span>\${row.badge}</span></td>
-                \`;
+                    <td class="rank-col">#${idx + 4}</td>
+                    <td><strong>${row.name}</strong><br><small style="color:var(--text-muted)">${row.stream}</small></td>
+                    <td>${row.exam}</td>
+                    <td class="score-col">${row.score}</td>
+                    <td class="badge-col"><span>${row.badge}</span></td>
+                `;
                 tbody.appendChild(tr);
             });
             initInteractiveCursor();
@@ -334,18 +334,18 @@
                 
                 const card = document.createElement('div');
                 card.className = 'course-card';
-                card.style.animationDelay = \`\${idx * 0.1}s\`;
-                card.innerHTML = \`
-                    <div class="course-glow" style="background: \${colorClass}; box-shadow: 0 0 15px \${colorClass}"></div>
-                    \${course.popular ? '<div class="badge-popular">Popular</div>' : ''}
+                card.style.animationDelay = `${idx * 0.1}s`;
+                card.innerHTML = `
+                    <div class="course-glow" style="background: ${colorClass}; box-shadow: 0 0 15px ${colorClass}"></div>
+                    ${course.popular ? '<div class="badge-popular">Popular</div>' : ''}
                     <div class="course-header">
-                        <div class="exam-badge" style="color: \${colorClass}; background: \${colorClass}22">\${category.toUpperCase()}</div>
-                        <h3 class="course-title">\${course.title}</h3>
+                        <div class="exam-badge" style="color: ${colorClass}; background: ${colorClass}22">${category.toUpperCase()}</div>
+                        <h3 class="course-title">${course.title}</h3>
                         <div class="course-details-grid">
-                            <div class="detail-item"><i class="far fa-clock"></i> \${course.duration}</div>
-                            <div class="detail-item"><i class="fas fa-desktop"></i> \${course.mode}</div>
-                            <div class="detail-item"><i class="far fa-calendar-alt"></i> \${course.start}</div>
-                            <div class="detail-item"><i class="fas fa-users"></i> Batch: \${course.size}</div>
+                            <div class="detail-item"><i class="far fa-clock"></i> ${course.duration}</div>
+                            <div class="detail-item"><i class="fas fa-desktop"></i> ${course.mode}</div>
+                            <div class="detail-item"><i class="far fa-calendar-alt"></i> ${course.start}</div>
+                            <div class="detail-item"><i class="fas fa-users"></i> Batch: ${course.size}</div>
                         </div>
                     </div>
                     <div class="course-body">
@@ -358,24 +358,24 @@
                         <div class="seats-container">
                             <div class="seats-text">
                                 <span>Seats Filling Fast!</span>
-                                <span>\${course.seats}/\${course.totalSeats} Filled</span>
+                                <span>${course.seats}/${course.totalSeats} Filled</span>
                             </div>
                             <div class="seats-bg">
-                                <div class="seats-bar" style="width: \${fillPercent}%; background: \${fillPercent > 80 ? '#EF4444' : '#F5A623'}"></div>
+                                <div class="seats-bar" style="width: ${fillPercent}%; background: ${fillPercent > 80 ? '#EF4444' : '#F5A623'}"></div>
                             </div>
                         </div>
                     </div>
                     <div class="course-footer">
                         <div class="course-fee">
-                            <span class="fee-current">₹\${course.fee}</span>
-                            <span class="fee-original">₹\${course.oldFee}</span>
+                            <span class="fee-current">₹${course.fee}</span>
+                            <span class="fee-original">₹${course.oldFee}</span>
                         </div>
                         <div class="course-actions">
                             <a href="#admission" class="btn btn-primary interactive">Enroll Now</a>
                             <a href="#" class="btn btn-outline interactive">Syllabus</a>
                         </div>
                     </div>
-                \`;
+                `;
                 coursesGrid.appendChild(card);
             });
             initInteractiveCursor();
@@ -402,8 +402,8 @@
         
         function updateCalcStep(step) {
             document.querySelectorAll('.calc-step').forEach(el => el.classList.remove('active'));
-            document.getElementById(\`calc-step-\${step}\`).classList.add('active');
-            progressBar.style.width = \`\${(step / totalSteps) * 100}%\`;
+            document.getElementById(`calc-step-${step}`).classList.add('active');
+            progressBar.style.width = `${(step / totalSteps) * 100}%`;
         }
 
         nextBtns.forEach(btn => {
@@ -460,15 +460,15 @@
                 const resultDiv = document.getElementById('calcResult');
                 resultDiv.style.display = 'block';
                 
-                document.getElementById('resultBadge').textContent = \`\${badge} Scholarship\`;
-                document.getElementById('resultBadge').style.background = \`linear-gradient(135deg, \${color}, #000)\`;
+                document.getElementById('resultBadge').textContent = `${badge} Scholarship`;
+                document.getElementById('resultBadge').style.background = `linear-gradient(135deg, ${color}, #000)`;
                 document.getElementById('resultBadge').style.color = '#fff';
                 
-                document.getElementById('resultPercent').textContent = \`You qualify for \${scholarship}% scholarship!\`;
-                document.getElementById('resultSaved').textContent = \`You save approx ₹\${savings.toLocaleString()}!\`;
+                document.getElementById('resultPercent').textContent = `You qualify for ${scholarship}% scholarship!`;
+                document.getElementById('resultSaved').textContent = `You save approx ₹${savings.toLocaleString()}!`;
                 
                 setTimeout(() => {
-                    document.getElementById('resultBar').style.width = \`\${scholarship}%\`;
+                    document.getElementById('resultBar').style.width = `${scholarship}%`;
                 }, 100);
             });
         }
@@ -562,7 +562,7 @@
         function formatTime(s) {
             const m = Math.floor(s / 60);
             const sec = s % 60;
-            return \`\${m.toString().padStart(2,'0')}:\${sec.toString().padStart(2,'0')}\`;
+            return `${m.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
         }
 
         function startTimer() {
@@ -583,7 +583,7 @@
             paletteGrid.innerHTML = '';
             for(let i=0; i<5; i++) {
                 const btn = document.createElement('button');
-                btn.className = \`palette-btn interactive \${testState[i]} \${i === currentQ ? 'active' : ''}\`;
+                btn.className = `palette-btn interactive ${testState[i]} ${i === currentQ ? 'active' : ''}`;
                 btn.textContent = i + 1;
                 btn.onclick = () => loadQuestion(i);
                 paletteGrid.appendChild(btn);
@@ -596,7 +596,7 @@
             currentQ = idx;
             if(testState[currentQ] === 'notvis') testState[currentQ] = 'unans';
             
-            if(qNumDisplay) qNumDisplay.textContent = \`Question \${idx + 1}\`;
+            if(qNumDisplay) qNumDisplay.textContent = `Question ${idx + 1}`;
             if(qText) qText.innerHTML = mockQuestions[idx].q;
             
             if(qOptions) {
@@ -604,11 +604,11 @@
                 const labels = ['A', 'B', 'C', 'D'];
                 mockQuestions[idx].opts.forEach((opt, i) => {
                     const div = document.createElement('div');
-                    div.className = \`option-item interactive \${userAnswers[idx] === i ? 'selected' : ''}\`;
-                    div.innerHTML = \`
-                        <div class="option-marker">\${labels[i]}</div>
-                        <div class="option-text">\${opt}</div>
-                    \`;
+                    div.className = `option-item interactive ${userAnswers[idx] === i ? 'selected' : ''}`;
+                    div.innerHTML = `
+                        <div class="option-marker">${labels[i]}</div>
+                        <div class="option-text">${opt}</div>
+                    `;
                     div.onclick = () => {
                         userAnswers[idx] = i;
                         testState[idx] = 'ans';
@@ -658,7 +658,7 @@
             }
             
             const score = Math.max(0, (correct * 4) - wrong);
-            document.getElementById('finalScore').textContent = \`\${score}/20\`;
+            document.getElementById('finalScore').textContent = `${score}/20`;
             
             const timeTaken = 600 - timeLeft;
             document.getElementById('resTime').textContent = formatTime(timeTaken);
@@ -671,7 +671,7 @@
             let dummy = 1000;
             const rankInt = setInterval(() => {
                 dummy -= 50;
-                rankEl.textContent = \`#\${dummy}\`;
+                rankEl.textContent = `#${dummy}`;
                 if(dummy <= 42) {
                     clearInterval(rankInt);
                     rankEl.textContent = '#42';
@@ -804,3 +804,31 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
         unlockAchievement('researcher', 'Active Researcher', 'Checked different courses', 15);
     });
 });
+}
+
+// Contact Form Logic
+const contactForm = document.getElementById('contactForm');
+if(contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        btn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+            document.getElementById('contactSuccess').style.display = 'block';
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            contactForm.reset();
+            
+            // Gamification
+            addXP(20, "Contacted Support");
+            
+            setTimeout(() => {
+                document.getElementById('contactSuccess').style.display = 'none';
+            }, 5000);
+        }, 1500);
+    });
+}

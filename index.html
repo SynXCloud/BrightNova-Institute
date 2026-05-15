@@ -592,6 +592,60 @@
         </div>
     </section>
 
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+        <div class="container">
+            <h2 class="section-title">Free Study <span>Materials</span></h2>
+            <div class="resources-grid">
+                <div class="resource-card interactive">
+                    <div class="res-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h3>Physics Formula Sheet</h3>
+                    <p>Complete Class 11 & 12 formulas</p>
+                    <button class="btn btn-outline interactive" onclick="unlockAchievement('downloader', 'Resource Hunter', 'Downloaded study material', 15)">Download PDF</button>
+                </div>
+                <div class="resource-card interactive">
+                    <div class="res-icon"><i class="fas fa-book"></i></div>
+                    <h3>Organic Chem Mindmaps</h3>
+                    <p>Reaction mechanisms simplified</p>
+                    <button class="btn btn-outline interactive" onclick="unlockAchievement('downloader', 'Resource Hunter', 'Downloaded study material', 15)">Download PDF</button>
+                </div>
+                <div class="resource-card interactive locked">
+                    <div class="res-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Previous Year Papers (10 Yrs)</h3>
+                    <p>Unlock by attempting 1 Mock Test</p>
+                    <button class="btn btn-outline interactive disabled" disabled>Locked</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in <span>Touch</span></h2>
+            <div class="contact-wrapper">
+                <div class="contact-info-panel">
+                    <h3>We're here to help!</h3>
+                    <p>Have questions about batches, scholarships, or hostels? Reach out to our expert counselors.</p>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Education Hub, Sector 4, New Delhi</li>
+                        <li><i class="fas fa-phone"></i> +91 93456 78901</li>
+                        <li><i class="fas fa-envelope"></i> helpdesk@apexacademy.edu</li>
+                    </ul>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <input type="text" class="calc-input interactive" placeholder="Your Name" required>
+                        <input type="email" class="calc-input interactive" placeholder="Your Email" required>
+                        <textarea class="calc-input interactive" placeholder="Your Message" rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary interactive w-100">Send Message</button>
+                        <div id="contactSuccess" style="display:none; color: var(--success); margin-top: 15px; text-align: center;"><i class="fas fa-check-circle"></i> Message sent successfully!</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Phase 6: Resources, FAQ, Footer -->
     <section id="faq" class="faq-section">
         <div class="container">
